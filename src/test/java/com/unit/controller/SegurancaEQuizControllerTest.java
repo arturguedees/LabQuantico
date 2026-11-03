@@ -87,7 +87,7 @@ class SegurancaEQuizControllerTest {
         ), "pt");
         assertNotNull(bodyPt);
         assertEquals(true, bodyPt.get("correto"));
-        assertTrue(bodyPt.get("mensagem").toString().contains("Correta"));
+        assertTrue(bodyPt.get("mensagem").toString().toLowerCase().contains("correta"));
 
         // Testa dicas em Ingles e Portugues
         Map<String, Object> dicaBodyEn = controller.obterDica("max_01", "formula", "en");

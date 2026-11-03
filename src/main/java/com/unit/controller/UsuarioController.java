@@ -32,17 +32,21 @@ public class UsuarioController {
      */
     public static String gerarHashSenha(String senhaPura) {
         if (senhaPura == null) return "";
-        // Se ja estiver com cara de hash SHA-256 (64 chars hex), nao faz hash duas vezes
-        if (senhaPura.matches("^[a-fA-F0-9]{64}$")) {
+        // Se ja estiver com prefixo sha256: seguido de 64 chars hex, nao faz hash duas vezes
+        if (senhaPura.startsWith("sha256:") && senhaPura.substring(7).matches("^[a-fA-F0-9]{64}$")) {
             return senhaPura.toLowerCase();
+        }
+        // Se for 64 chars hex sem prefixo, apenas adiciona o prefixo padrao
+        if (senhaPura.matches("^[a-fA-F0-9]{64}$")) {
+            return "sha256:" + senhaPura.toLowerCase();
         }
         try {
             MessageDigest digest = MessageDigest.getInstance("SHA-256");
             byte[] bytes = digest.digest((SALT_SEGURANCA + senhaPura).getBytes(StandardCharsets.UTF_8));
-            return HexFormat.of().formatHex(bytes);
+            return "sha256:" + HexFormat.of().formatHex(bytes);
         } catch (Exception e) {
             // Se der algum erro bizarro no algoritmo, retorna um fallback seguro
-            return Integer.toHexString((SALT_SEGURANCA + senhaPura).hashCode());
+            return "sha256:" + Integer.toHexString((SALT_SEGURANCA + senhaPura).hashCode());
         }
     }
 
@@ -53,7 +57,12 @@ public class UsuarioController {
     private boolean verificarSenha(String senhaDigitada, String senhaNoBanco) {
         if (senhaDigitada == null || senhaNoBanco == null) return false;
         String hashDigitado = gerarHashSenha(senhaDigitada);
-        return hashDigitado.equalsIgnoreCase(senhaNoBanco) || senhaDigitada.equals(senhaNoBanco);
+        String hashSemPrefixo = hashDigitado.startsWith("sha256:") ? hashDigitado.substring(7) : hashDigitado;
+        String bancoSemPrefixo = senhaNoBanco.startsWith("sha256:") ? senhaNoBanco.substring(7) : senhaNoBanco;
+
+        return hashDigitado.equalsIgnoreCase(senhaNoBanco)
+                || hashSemPrefixo.equalsIgnoreCase(bancoSemPrefixo)
+                || senhaDigitada.equals(senhaNoBanco);
     }
 
     // Esse metodo roda sozinho quando o Spring sobe (@PostConstruct) e cria 3 cientistas famosos

@@ -11,6 +11,7 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![Docker](https://img.shields.io/badge/Docker-Enabled-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
+[![License](https://img.shields.io/badge/License-Proprietary%20%7C%20All%20Rights%20Reserved-critical?style=for-the-badge)](LICENSE)
 
 [🌐 Live Production Demo](https://labquantico.netlify.app) • [📖 Architecture & Modules](#-software-architecture) • [🚀 Quick Start Guide](#-quick-start--local-development)
 
@@ -197,6 +198,20 @@ A arquitetura foi projetada para ser **100% Cloud-Agnostic**, permitindo implant
    - Inclui regras universais de reescrita SPA (`/* -> /index.html 200`) e injeção automática de cabeçalhos de segurança HTTP.
 
 Consulte o guia complementar [`GUIA_DEPLOY_E_ARQUITETURA.md`](GUIA_DEPLOY_E_ARQUITETURA.md) para detalhes adicionais de infraestrutura.
+
+---
+
+## ⚖️ Propriedade Intelectual & Proteção Legal / Intellectual Property
+
+**LabQuântico** é um software de titularidade e autoria exclusiva de **Artur Guedes**.
+
+* **Licenciamento Proprietário:** Todos os direitos reservados. É expressamente proibida a cópia, clonagem, redistribuição, engenharia reversa, sublicenciamento ou exploração comercial deste sistema ou de seus componentes numéricos sem autorização prévia por escrito do autor (consulte o arquivo [`LICENSE`](LICENSE)).
+* **Proteção Jurídica de Software:** O sistema possui proteção legal assegurada pela **Lei Federal nº 9.609/1998** (Proteção da Propriedade Intelectual de Programa de Computador) e **Lei Federal nº 9.610/1998** (Direitos Autorais), com cobertura internacional em mais de 175 países signatários da Convenção de Berna.
+* **Resumo Criptográfico do Código-Fonte (Hash SHA-512):**
+  ```text
+  40534d54843203e4f9ebfa5faf3e8fde3ae6310f92da44620eec47b57d201fb5b80f0294d496a1bef34738029d6733b2d071d2df017d335dd111e8b1357e48e3
+  ```
+* Consulte o [`GUIA_REGISTRO_E_PATENTE_INPI.md`](GUIA_REGISTRO_E_PATENTE_INPI.md) com as instruções e passo a passo formal para o registro no Instituto Nacional da Propriedade Industrial (INPI).
 
 ---
 
