@@ -138,3 +138,145 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
 }
+
+/* ==============================================================================
+   Animações Quânticas e Fórmulas Flutuantes da Tela de Login
+   ============================================================================== */
+@keyframes quantumFloat1 {
+  0%, 100% {
+    transform: translateY(0px) rotate(-3deg) scale(1);
+  }
+  50% {
+    transform: translateY(-16px) rotate(-1deg) scale(1.03);
+  }
+}
+
+@keyframes quantumFloat2 {
+  0%, 100% {
+    transform: translateY(0px) rotate(3deg) scale(1);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg) scale(1.04);
+  }
+}
+
+@keyframes quantumFloat3 {
+  0%, 100% {
+    transform: translateY(0px) rotate(4deg) scale(1);
+  }
+  50% {
+    transform: translateY(-14px) rotate(1deg) scale(1.02);
+  }
+}
+
+@keyframes quantumFloat4 {
+  0%, 100% {
+    transform: translateY(0px) rotate(-2deg) scale(1);
+  }
+  50% {
+    transform: translateY(-18px) rotate(-4deg) scale(1.03);
+  }
+}
+
+@keyframes quantumFloat5 {
+  0%, 100% {
+    transform: translateY(0px) rotate(2deg) scale(1);
+  }
+  50% {
+    transform: translateY(-12px) rotate(-2deg) scale(1.02);
+  }
+}
+
+@keyframes quantumFloat6 {
+  0%, 100% {
+    transform: translateY(0px) rotate(-4deg) scale(1);
+  }
+  50% {
+    transform: translateY(-15px) rotate(2deg) scale(1.03);
+  }
+}
+
+@keyframes quantumOrbit {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes quantumDriftSlow {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.18;
+  }
+  50% {
+    transform: translate(25px, -30px) scale(1.08);
+    opacity: 0.35;
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.18;
+  }
+}
+
+@keyframes quantumDriftReverse {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.15;
+  }
+  50% {
+    transform: translate(-30px, 25px) scale(1.06);
+    opacity: 0.32;
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.15;
+  }
+}
+
+.animate-quantum-1 {
+  animation: quantumFloat1 5.5s ease-in-out infinite;
+}
+
+.animate-quantum-2 {
+  animation: quantumFloat2 7s ease-in-out infinite;
+  animation-delay: 0.8s;
+}
+
+.animate-quantum-3 {
+  animation: quantumFloat3 6s ease-in-out infinite;
+  animation-delay: 1.6s;
+}
+
+.animate-quantum-4 {
+  animation: quantumFloat4 6.8s ease-in-out infinite;
+  animation-delay: 2.2s;
+}
+
+.animate-quantum-5 {
+  animation: quantumFloat5 5.8s ease-in-out infinite;
+  animation-delay: 1.2s;
+}
+
+.animate-quantum-6 {
+  animation: quantumFloat6 6.4s ease-in-out infinite;
+  animation-delay: 2.8s;
+}
+
+.animate-quantum-orbit-slow {
+  animation: quantumOrbit 20s linear infinite;
+}
+
+.animate-quantum-orbit-reverse {
+  animation: quantumOrbit 16s linear infinite reverse;
+}
+
+.animate-quantum-drift {
+  animation: quantumDriftSlow 12s ease-in-out infinite;
+}
+
+.animate-quantum-drift-rev {
+  animation: quantumDriftReverse 14s ease-in-out infinite;
+  animation-delay: 3s;
+}

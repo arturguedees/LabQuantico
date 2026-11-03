@@ -4,6 +4,7 @@ import { Lock, Mail, ArrowRight, AlertCircle, Sparkles, Activity, Atom, FlaskCon
 import { loginUsuarioApi, sanitizarUsuarioSemSenha } from '../services/api';
 import { LanguageSelector, useI18n } from '../i18n/i18n';
 import { useNotificacao } from '../components/NotificacaoToast';
+import FormulasFlutuantesFundo from '../components/FormulasFlutuantesFundo';
 
 export default function Login() {
   const navigate = useNavigate();
@@ -65,39 +66,13 @@ export default function Login() {
   return (
     <div 
       className="min-h-screen bg-[#F4FEE5] relative overflow-hidden flex items-center justify-center p-4 sm:p-8 font-sans"
-      style={{
-        backgroundImage: 'radial-gradient(#191A23 1.25px, transparent 1.25px)',
-        backgroundSize: '28px 28px'
-      }}
     >
+      {/* Componente Dedicado de Fórmulas Quânticas Flutuantes em Movimento */}
+      <FormulasFlutuantesFundo />
+
       {/* Seletor de Idioma no topo da tela de Login */}
       <div className="fixed top-4 right-4 sm:top-6 sm:right-8 z-50">
         <LanguageSelector />
-      </div>
-
-      {/* Luzes difusas de fundo */}
-      <div className="absolute -top-32 -left-32 w-96 h-96 bg-brand/35 rounded-full blur-3xl pointer-events-none transform-gpu"></div>
-      <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-yellow-300/40 rounded-full blur-3xl pointer-events-none transform-gpu"></div>
-
-      {/* Badges Flutuantes com Formulas de Fisico-Quimica */}
-      <div className="hidden xl:flex items-center space-x-2 absolute top-10 left-12 bg-white border-3 border-dark rounded-2xl px-4 py-2.5 shadow-neo rotate-[-3deg] z-0">
-        <Activity className="w-5 h-5 text-dark stroke-[2.5]" />
-        <span className="font-mono font-black text-xs text-dark tracking-wide">ΔG° = -RT ln(K)</span>
-      </div>
-
-      <div className="hidden xl:flex items-center space-x-2 absolute top-16 right-14 bg-yellow-300 border-3 border-dark rounded-2xl px-4 py-2.5 shadow-neo rotate-[3deg] z-0">
-        <Sparkles className="w-5 h-5 text-dark stroke-[2.5]" />
-        <span className="font-mono font-black text-xs text-dark tracking-wide">[A] = [A]₀ · e⁻ᵏᵗ</span>
-      </div>
-
-      <div className="hidden xl:flex items-center space-x-2 absolute bottom-10 left-14 bg-brand border-3 border-dark rounded-2xl px-4 py-2.5 shadow-neo rotate-[4deg] z-0">
-        <Atom className="w-5 h-5 text-dark stroke-[2.5]" />
-        <span className="font-mono font-black text-xs text-dark tracking-wide">v_rms = √(3RT/M)</span>
-      </div>
-
-      <div className="hidden xl:flex items-center space-x-2 absolute bottom-12 right-12 bg-white border-3 border-dark rounded-2xl px-4 py-2.5 shadow-neo rotate-[-2deg] z-0">
-        <FlaskConical className="w-5 h-5 text-dark stroke-[2.5]" />
-        <span className="font-mono font-black text-xs text-dark tracking-wide">ΔH = ∫ ΔCp dT</span>
       </div>
 
       {/* Card Principal */}
@@ -107,8 +82,13 @@ export default function Login() {
         <div className="lg:col-span-5 bg-dark text-white p-8 sm:p-12 flex flex-col justify-between border-b-4 lg:border-b-0 lg:border-r-4 border-dark relative">
           <div className="space-y-8">
             <div className="flex items-center space-x-4">
-              <div className="w-14 h-14 bg-white border-3 border-white rounded-2xl p-1.5 flex items-center justify-center shadow-neo-sm transform hover:rotate-12 transition-all duration-300">
-                <img src="/logo.png" alt="LabQuântico" className="w-full h-full object-contain" />
+              <div className="relative w-14 h-14 flex items-center justify-center">
+                {/* Anéis orbitais quânticos em rotação contínua */}
+                <div className="absolute -inset-2 border-2 border-dashed border-brand/50 rounded-2xl animate-quantum-orbit-slow pointer-events-none" />
+                <div className="absolute -inset-3.5 border border-indigo-400/30 rounded-3xl animate-quantum-orbit-reverse pointer-events-none" />
+                <div className="w-14 h-14 bg-white border-3 border-white rounded-2xl p-1.5 flex items-center justify-center shadow-neo-sm transform hover:rotate-12 transition-all duration-300 relative z-10">
+                  <img src="/logo.png" alt="LabQuântico" className="w-full h-full object-contain" />
+                </div>
               </div>
               <div>
                 <span className="text-2xl font-black uppercase tracking-tight font-display block leading-none text-white">
